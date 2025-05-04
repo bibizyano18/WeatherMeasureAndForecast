@@ -28,7 +28,7 @@ namespace WeatherMeasureAndForecast
             {
                 var line = lines[i].Split(',');
 
-                if (line.Length < 5)
+                if (line.Length < 4)
                     continue;
 
                 try
@@ -38,8 +38,7 @@ namespace WeatherMeasureAndForecast
                         Date = DateTime.Parse(line[0]),
                         minTemp = double.Parse(line[1]),
                         maxTemp = double.Parse(line[2]),
-                        avTemp = double.Parse(line[3]),
-                        Description = line[4]
+                        Description = line[3]
                     };
                     result.Add(day);
                 }
