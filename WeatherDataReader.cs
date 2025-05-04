@@ -19,16 +19,16 @@ namespace WeatherMeasureAndForecast
 {
     public class WeatherDataReader
     {
-        public static List<DataTemperature> LoadFromFile(string filePath)
+        public static List<DataTemperature> LoadFromFile(string filePath) 
         {
             var result = new List<DataTemperature>();
-            var lines = File.ReadAllLines(filePath);
+            var lines = File.ReadAllLines(filePath);  
             
             for (int i = 0; i<lines.Length; i++)
             {
                 var line = lines[i].Split(',');
 
-                if (line.Length < 4)
+                if (line.Length < 5)
                     continue;
 
                 try
@@ -38,7 +38,8 @@ namespace WeatherMeasureAndForecast
                         Date = DateTime.Parse(line[0]),
                         minTemp = double.Parse(line[1]),
                         maxTemp = double.Parse(line[2]),
-                        Description = line[3]
+                        avTemp = double.Parse(line[3]),
+                        Description = line[4]
                     };
                     result.Add(day);
                 }
