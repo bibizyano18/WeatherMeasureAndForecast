@@ -48,6 +48,7 @@
             this.btnRead.TabIndex = 0;
             this.btnRead.Text = "Прочитать";
             this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // btnAvg
             // 
@@ -58,6 +59,7 @@
             this.btnAvg.TabIndex = 1;
             this.btnAvg.Text = "Расчитать перепады";
             this.btnAvg.UseVisualStyleBackColor = true;
+            this.btnAvg.Click += new System.EventHandler(this.btnAvg_Click);
             // 
             // richTextBox1
             // 

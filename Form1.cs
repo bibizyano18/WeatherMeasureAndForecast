@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +16,6 @@ namespace WeatherMeasureAndForecast
     {
         WeatherDataReader reader = new WeatherDataReader();
         TemperatureForecast TemperatureForecast = new TemperatureForecast();
-
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +36,45 @@ namespace WeatherMeasureAndForecast
                 }
             }
             else { MessageBox.Show("Введите корректное число"); }
+
+        }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "TXT файлы (*txt)|*.txt|Все файлы (*.*)|*.*";
+            ofd.Title = "Выберите файл с погдой";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                
+                var data = reader.LoadFromFile(ofd.FileName);
+                // Петя вот тут добавляешь в табличку или ListView
+               
+                MessageBox.Show($"Загружено записей: {data.Count}");
+            }
+        }
+
+        private void btnAvg_Click(object sender, EventArgs e)
+        {
+            double minP=1000000, maxP=0;
+            DateTime maxD = DateTime.Now, minD = DateTime.Now;
+            for (int i = 0; i< reader.dataTemperatures.Count; i++)
+            {
+                var avg = reader.dataTemperatures[i].maxTemp - reader.dataTemperatures[i].minTemp;
+                if ( avg < minP)
+                {
+                    minP = avg;
+                    minD = reader.dataTemperatures[i].Date;
+                }
+                else if (avg > maxP)
+                {
+                    maxP = avg;
+                    maxD = reader.dataTemperatures[i].Date;
+                }
+            }
+            richTextBox1.Text += $"Самая сильный перепад температуры {maxD} - {maxP}\n Самый слабый перепад температуры {minD} - {minP}\n";
+
 
         }
     }
