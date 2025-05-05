@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnAvg = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -36,15 +44,23 @@
             this.btnForecast = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(168, 180);
-            this.btnRead.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRead.Image = ((System.Drawing.Image)(resources.GetObject("btnRead.Image")));
+            this.btnRead.Location = new System.Drawing.Point(165, 372);
+            this.btnRead.Margin = new System.Windows.Forms.Padding(2);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(70, 31);
+            this.btnRead.Size = new System.Drawing.Size(124, 40);
             this.btnRead.TabIndex = 0;
             this.btnRead.Text = "Прочитать";
             this.btnRead.UseVisualStyleBackColor = true;
@@ -52,10 +68,11 @@
             // 
             // btnAvg
             // 
-            this.btnAvg.Location = new System.Drawing.Point(15, 180);
-            this.btnAvg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAvg.Image = ((System.Drawing.Image)(resources.GetObject("btnAvg.Image")));
+            this.btnAvg.Location = new System.Drawing.Point(15, 372);
+            this.btnAvg.Margin = new System.Windows.Forms.Padding(2);
             this.btnAvg.Name = "btnAvg";
-            this.btnAvg.Size = new System.Drawing.Size(71, 31);
+            this.btnAvg.Size = new System.Drawing.Size(124, 40);
             this.btnAvg.TabIndex = 1;
             this.btnAvg.Text = "Расчитать перепады";
             this.btnAvg.UseVisualStyleBackColor = true;
@@ -63,36 +80,39 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(15, 16);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.richTextBox1.Location = new System.Drawing.Point(15, 22);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(224, 153);
+            this.richTextBox1.Size = new System.Drawing.Size(251, 140);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(15, 237);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.richTextBox2.Location = new System.Drawing.Point(15, 427);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(224, 153);
+            this.richTextBox2.Size = new System.Drawing.Size(274, 185);
             this.richTextBox2.TabIndex = 3;
             this.richTextBox2.Text = "";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(248, 238);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown1.Location = new System.Drawing.Point(283, 98);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(80, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(124, 20);
             this.numericUpDown1.TabIndex = 4;
             // 
             // btnForecast
             // 
-            this.btnForecast.Location = new System.Drawing.Point(248, 270);
-            this.btnForecast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnForecast.Image = ((System.Drawing.Image)(resources.GetObject("btnForecast.Image")));
+            this.btnForecast.Location = new System.Drawing.Point(283, 122);
+            this.btnForecast.Margin = new System.Windows.Forms.Padding(2);
             this.btnForecast.Name = "btnForecast";
-            this.btnForecast.Size = new System.Drawing.Size(70, 59);
+            this.btnForecast.Size = new System.Drawing.Size(124, 40);
             this.btnForecast.TabIndex = 5;
             this.btnForecast.Text = "Сделать прогноз";
             this.btnForecast.UseVisualStyleBackColor = true;
@@ -101,7 +121,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(338, 242);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(280, 69);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 13);
@@ -111,18 +133,85 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(513, 90);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(851, 639);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Петя лошарик го финалы";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(437, 25);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(534, 150);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            chartArea7.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chart1.Legends.Add(legend7);
+            this.chart1.Location = new System.Drawing.Point(437, 191);
+            this.chart1.Name = "chart1";
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chart1.Series.Add(series7);
+            this.chart1.Size = new System.Drawing.Size(534, 207);
+            this.chart1.TabIndex = 9;
+            this.chart1.Text = "chart1";
+            title4.Name = "Title1";
+            title4.Text = "Прогноз";
+            this.chart1.Titles.Add(title4);
+            // 
+            // chart2
+            // 
+            this.chart2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            chartArea8.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chart2.Legends.Add(legend8);
+            this.chart2.Location = new System.Drawing.Point(437, 417);
+            this.chart2.Name = "chart2";
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chart2.Series.Add(series8);
+            this.chart2.Size = new System.Drawing.Size(534, 195);
+            this.chart2.TabIndex = 10;
+            this.chart2.Text = "chart2";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(303, 427);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 185);
+            this.button1.TabIndex = 11;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 444);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(998, 661);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.chart2);
+            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnForecast);
@@ -131,10 +220,13 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnAvg);
             this.Controls.Add(this.btnRead);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +242,10 @@
         private System.Windows.Forms.Button btnForecast;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
