@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using WeatherMeasureAndForecast.Analytics;
 
 namespace WeatherMeasureAndForecast
@@ -58,6 +59,21 @@ namespace WeatherMeasureAndForecast
                
                 MessageBox.Show($"Загружено записей: {data.Count}");
             }
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = reader.dataTemperatures;
+
+            chart1.Series.Clear();
+            var seriesMin = new Series("Мин. температура") { ChartType = SeriesChartType.Line, Color = Color.Blue };
+            var seriesMax = new Series("Макс. температура") { ChartType = SeriesChartType.Line, Color = Color.Red };
+            foreach (var d in reader.dataTemperatures)
+            {
+                seriesMin.Points.AddXY(d.Date.ToShortDateString(), d.minTemp);
+                seriesMax.Points.AddXY(d.Date.ToShortDateString(), d.maxTemp);
+            }
+            chart1.Series.Add(seriesMin);
+            chart1.Series.Add(seriesMax);
+
         }
 
         private void btnAvg_Click(object sender, EventArgs e)
@@ -88,5 +104,7 @@ namespace WeatherMeasureAndForecast
 
 
         }
+
+        
     }
 }
