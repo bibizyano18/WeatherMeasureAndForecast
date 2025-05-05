@@ -9,11 +9,6 @@ namespace WeatherMeasureAndForecast.Analytics
 {
     public class TemperatureForecast
     {
-        public List<double> temperature = new List<double>
-        {
-            15.5, 16.2, 13, 18.4, 19.2, 14.7
-        };
-
         public void TempForecast(List<double> temps, List<double> res, int n)
         {
             if (n > temps.Count)

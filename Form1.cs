@@ -24,15 +24,20 @@ namespace WeatherMeasureAndForecast
 
         private void btnForecast_Click(object sender, EventArgs e)
         {
-            if (numericUpDown1.Value > 0 && numericUpDown1.Value <= 10)
+            if (reader.dataTemperatures.Count == 0)
             {
-                var temps = TemperatureForecast.temperature;
+                MessageBox.Show("Прочитайте файл");
+                return;
+            }
+            if (numericUpDown1.Value > 0 && numericUpDown1.Value <= reader.dataTemperatures.Count)
+            {
+                var temps = reader.makeTemperatureList();
                 var res = new List<double>();
                 TemperatureForecast.TempForecast(temps, res, (int)numericUpDown1.Value);
                 richTextBox2.Clear();
                 for (int i = 0; i < res.Count; i++)
                 {
-                    richTextBox2.Text += i+1 + " april " + Math.Round(res[i], 1) + "\n";
+                    richTextBox2.Text += $"{reader.dataTemperatures[reader.dataTemperatures.Count-1].Date.AddDays(i+1):dd.MM.yyyy} температура - {Math.Round(res[i], 1)} °C \n";
                 }
             }
             else { MessageBox.Show("Введите корректное число"); }
@@ -57,6 +62,12 @@ namespace WeatherMeasureAndForecast
 
         private void btnAvg_Click(object sender, EventArgs e)
         {
+            if (reader.dataTemperatures.Count == 0)
+            {
+                MessageBox.Show("Прочитайте файл");
+                return;
+            }
+            richTextBox1.Clear();
             double minP=1000000, maxP=0;
             DateTime maxD = DateTime.Now, minD = DateTime.Now;
             for (int i = 0; i< reader.dataTemperatures.Count; i++)
@@ -73,7 +84,7 @@ namespace WeatherMeasureAndForecast
                     maxD = reader.dataTemperatures[i].Date;
                 }
             }
-            richTextBox1.Text += $"Самая сильный перепад температуры {maxD} - {maxP}\n Самый слабый перепад температуры {minD} - {minP}\n";
+            richTextBox1.Text += $"Самая сильный перепад температуры {maxD:dd.MM.yyyy} - {maxP} °C \n Самый слабый перепад температуры {minD:dd.MM.yyyy} - {minP} °C \n";
 
 
         }
