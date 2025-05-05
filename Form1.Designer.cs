@@ -41,77 +41,86 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(252, 277);
+            this.btnRead.Location = new System.Drawing.Point(168, 180);
+            this.btnRead.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(105, 48);
+            this.btnRead.Size = new System.Drawing.Size(70, 31);
             this.btnRead.TabIndex = 0;
             this.btnRead.Text = "Прочитать";
             this.btnRead.UseVisualStyleBackColor = true;
             // 
             // btnAvg
             // 
-            this.btnAvg.Location = new System.Drawing.Point(23, 277);
+            this.btnAvg.Location = new System.Drawing.Point(15, 180);
+            this.btnAvg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAvg.Name = "btnAvg";
-            this.btnAvg.Size = new System.Drawing.Size(106, 48);
+            this.btnAvg.Size = new System.Drawing.Size(71, 31);
             this.btnAvg.TabIndex = 1;
             this.btnAvg.Text = "Расчитать перепады";
             this.btnAvg.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(23, 25);
+            this.richTextBox1.Location = new System.Drawing.Point(15, 16);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(334, 233);
+            this.richTextBox1.Size = new System.Drawing.Size(224, 153);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(23, 365);
+            this.richTextBox2.Location = new System.Drawing.Point(15, 237);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(334, 233);
+            this.richTextBox2.Size = new System.Drawing.Size(224, 153);
             this.richTextBox2.TabIndex = 3;
             this.richTextBox2.Text = "";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(372, 366);
+            this.numericUpDown1.Location = new System.Drawing.Point(248, 238);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown1.Size = new System.Drawing.Size(80, 20);
             this.numericUpDown1.TabIndex = 4;
             // 
             // btnForecast
             // 
-            this.btnForecast.Location = new System.Drawing.Point(372, 415);
+            this.btnForecast.Location = new System.Drawing.Point(248, 270);
+            this.btnForecast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnForecast.Name = "btnForecast";
-            this.btnForecast.Size = new System.Drawing.Size(105, 48);
+            this.btnForecast.Size = new System.Drawing.Size(70, 59);
             this.btnForecast.TabIndex = 5;
             this.btnForecast.Text = "Сделать прогноз";
             this.btnForecast.UseVisualStyleBackColor = true;
+            this.btnForecast.Click += new System.EventHandler(this.btnForecast_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(507, 372);
+            this.label1.Location = new System.Drawing.Point(338, 242);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 20);
+            this.label1.Size = new System.Drawing.Size(132, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Введите количесво дней";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(769, 138);
+            this.label2.Location = new System.Drawing.Point(513, 90);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 20);
+            this.label2.Size = new System.Drawing.Size(136, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Петя лошарик го финалы";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 683);
+            this.ClientSize = new System.Drawing.Size(823, 444);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnForecast);
@@ -120,6 +129,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnAvg);
             this.Controls.Add(this.btnRead);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

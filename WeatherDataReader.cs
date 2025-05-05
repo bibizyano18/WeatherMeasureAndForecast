@@ -51,7 +51,7 @@ namespace WeatherMeasureAndForecast
             return dataTemperatures;
         }
 
-        public List<double> TemichGay()
+        public List<double> makeTemperatureList()
         {
             var res = new List<double>();
             for (int i =0; i< dataTemperatures.Count; i++)
@@ -62,8 +62,4 @@ namespace WeatherMeasureAndForecast
             return res;
         }
     }
-
-    
-
-    
 }
