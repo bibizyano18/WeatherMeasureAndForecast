@@ -13,6 +13,7 @@ namespace WeatherMeasureAndForecast
 
     public partial class Form1 : Form
     {
+        WeatherDataReader reader = new WeatherDataReader();
         public Form1()
         {
             InitializeComponent();
@@ -26,16 +27,34 @@ namespace WeatherMeasureAndForecast
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                var reader = new WeatherDataReader();
+                
                 var data = reader.LoadFromFile(ofd.FileName);
                 // Петя вот тут добавляешь в табличку или ListView
-
+               
                 MessageBox.Show($"Загружено записей: {data.Count}");
             }
         }
 
         private void btnAvg_Click(object sender, EventArgs e)
         {
+            double minP=1000000, maxP=0;
+            DateTime maxD = DateTime.Now, minD = DateTime.Now;
+            for (int i = 0; i< reader.dataTemperatures.Count; i++)
+            {
+                var avg = reader.dataTemperatures[i].maxTemp - reader.dataTemperatures[i].minTemp;
+                if ( avg < minP)
+                {
+                    minP = avg;
+                    minD = reader.dataTemperatures[i].Date;
+                }
+                else if (avg > maxP)
+                {
+                    maxP = avg;
+                    maxD = reader.dataTemperatures[i].Date;
+                }
+            }
+            richTextBox1.Text += $"Самая сильный перепад температуры {maxD} - {maxP}\n Самый слабый перепад температуры {minD} - {minP}\n";
+
 
         }
     }

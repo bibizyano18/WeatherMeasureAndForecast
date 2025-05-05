@@ -19,7 +19,7 @@ namespace WeatherMeasureAndForecast
 {
     public class WeatherDataReader
     {
-        private List<DataTemperature> dataTemperatures = new List<DataTemperature>();
+        public List<DataTemperature> dataTemperatures = new List<DataTemperature>();
         public List<DataTemperature> LoadFromFile(string filePath) 
         {
             var lines = File.ReadAllLines(filePath);  
