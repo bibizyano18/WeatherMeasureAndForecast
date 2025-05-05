@@ -17,5 +17,26 @@ namespace WeatherMeasureAndForecast
         {
             InitializeComponent();
         }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "TXT файлы (*txt)|*.txt|Все файлы (*.*)|*.*";
+            ofd.Title = "Выберите файл с погдой";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                var reader = new WeatherDataReader();
+                var data = reader.LoadFromFile(ofd.FileName);
+                // Петя вот тут добавляешь в табличку или ListView
+
+                MessageBox.Show($"Загружено записей: {data.Count}");
+            }
+        }
+
+        private void btnAvg_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
