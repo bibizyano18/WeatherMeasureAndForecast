@@ -74,6 +74,15 @@ namespace WeatherMeasureAndForecast
             chart1.Series.Add(seriesMin);
             chart1.Series.Add(seriesMax);
 
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["minTemp"].Value != null && row.Cells["maxTemp"].Value != null)
+                {
+                    row.Cells["minTemp"].Style.BackColor = Color.LightBlue;
+                    row.Cells["maxTemp"].Style.BackColor = Color.LightCoral;
+                }
+            }
+
         }
 
         private void btnAvg_Click(object sender, EventArgs e)
