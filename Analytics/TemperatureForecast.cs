@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace WeatherMeasureAndForecast.Analytics
 {
-    public class TemperatureMeasure
+    public class TemperatureForecast
     {
-        public List<decimal> temperature = new List<decimal>();
+        public List<double> temperature = new List<double>
+        {
+            15.5, 16.2, 13, 18.4, 19.2, 14.7
+        };
 
-        public decimal tempMeasure(decimal max, decimal min)
+        public decimal TempForecast(decimal max, decimal min)
         {
             decimal result = Math.Abs(max) - Math.Abs(min);
             return result;
