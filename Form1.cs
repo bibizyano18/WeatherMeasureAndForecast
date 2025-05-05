@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using WeatherMeasureAndForecast.Analytics;
+using System.Media;
 
 namespace WeatherMeasureAndForecast
 {
@@ -148,6 +149,17 @@ namespace WeatherMeasureAndForecast
 
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SoundPlayer player = new SoundPlayer("somebody.wav");
+                player.Play(); // Или .PlaySync() если хочешь дождаться завершения
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка воспроизведения звука: " + ex.Message);
+            }
+        }
     }
 }
