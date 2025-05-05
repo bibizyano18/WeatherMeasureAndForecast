@@ -19,9 +19,9 @@ namespace WeatherMeasureAndForecast
 {
     public class WeatherDataReader
     {
-        public static List<DataTemperature> LoadFromFile(string filePath) 
+        private List<DataTemperature> dataTemperatures = new List<DataTemperature>();
+        public List<DataTemperature> LoadFromFile(string filePath) 
         {
-            var result = new List<DataTemperature>();
             var lines = File.ReadAllLines(filePath);  
             
             for (int i = 0; i<lines.Length; i++)
@@ -40,7 +40,7 @@ namespace WeatherMeasureAndForecast
                         maxTemp = double.Parse(line[2]),
                         Description = line[3]
                     };
-                    result.Add(day);
+                    dataTemperatures.Add(day);
                 }
                 catch (Exception ex)
                 {
@@ -48,9 +48,22 @@ namespace WeatherMeasureAndForecast
                 }
             }
             
-            return result;
+            return dataTemperatures;
+        }
+
+        public List<double> TemichGay()
+        {
+            var res = new List<double>();
+            for (int i =0; i< dataTemperatures.Count; i++)
+            {
+                res.Add(dataTemperatures[i].avgTemp);
+            }
+
+            return res;
         }
     }
+
+    
 
     
 }
